@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ARIA Landmarks Demonstration</title>
+<link href="landmarks.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="thrColElsHdr">
+
+<div id="container">
+  <div id="header" role="banner" aria-labelledby="bannerHeading">
+    <h2 id="bannerHeading">ARIA Landmarks in (X)HTML
+    </h2>
+  </div>
+  <div id="sidebar1">
+    <div role="navigation" aria-label="Site Navigation">
+      <ul>
+        <li><a href="#">Nav link #1</a></li>
+        <li><a href="#">Nav link #2</a></li>
+        <li><a href="#">Nav link #3</a></li>
+        <li><a href="#">Nav link #4</a></li>
+        <li><a href="#">Nav link #5</a>
+        </li>
+        <li>(note this landmark has an invisible label with aria-label)</li>
+      </ul>
+    </div>
+    <div role="search" aria-labelledby="searchLabel">
+      <h3 id="searchLabel">Search This Site</h3>
+      <form id="form2" name="form2" method="post" action="">
+        <p><label for="searchText" id="searchTermLabel">Search terms</label>
+        <input type="text" name="searchText" id="searchText" /></p>
+        <p><input type="submit" name="submit" id="submit2" value="Submit" /></p>
+      </form>   
+    </div>
+  </div>
+  <div id="sidebar2">
+    <div id="applyForm" role="form" aria-labelledby="newsletterLabel">
+      <h3 id="newsletterLabel">Subscribe to Our Newsletter</h3>
+      <form id="form1" name="form1" method="post" action="">
+        <p><label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" /></p>
+        <p><label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" /></p>
+        <p><label for="email">Email Address</label>
+        <input type="text" name="email" id="email" /></p>
+        <p><input type="submit" name="submit" id="submit" value="Submit" /></p>
+      </form>
+    </div>
+    <div id="upcoming" role="complementary" aria-labelledby="validationLabel">
+    <h3 id="validationLabel">ARIA and Validation</h3>
+    <p>If you add any ARIA attributes to your page it may cause your code to not validate against the <a href="http://validator.w3.org/">W3C Validation Service</a>. Even though it is frequently said that pages must validate in order to be accessible, this is one exception to that rule. In fact, by adding these non-validating attributes you will be making your page more accessible.</p>
+    </div>
+  </div>
+  <div id="mainContent" role="main" aria-labelledby="mainContentLabel">
+<h1 id="mainContentLabel">Main Content</h1>
+    <p>This tutorial demonstrates how to add ARIA landmarks to a Web page to aid in accessibility. ARIA landmarks are attributes you add to elements to create semantically defined sections of a page that allow users of assistive technologies to navigate the page more easily. You can define the following navigational landmarks.</p>
+    <ul>
+      <li>application (not covered in this demonstration)</li>
+      <li><a href="#banner">banner</a></li>
+      <li><a href="#validation">complementary</a></li>
+      <li><a href="#pageFooter">contentinfo</a></li>
+      <li><a href="#subscribe">form</a></li>
+      <li><a href="#main">main</a></li>
+      <li><a href="#navigation">navigation</a></li>
+      <li><a href="#search">search</a></li>
+    </ul>
+    <p>When you add ARIA landmarks to a page, it is like building in a set of &quot;skip to&quot; links, like &quot;skip to main content&quot;, &quot;skip to search&quot;, etc. Screen reader users can use a single key to instantly jump to each of these sections and know what the section's function is. ARIA landmarks do not impact the display of your page in any way so they are an easy way to add additional accessibility into your existing site.</p>
+    <p>The role of &quot;application&quot; is not covered in this demonstration. This role is used when creating your own widgets or web applications that need to behave more like a desktop application than a traditional Web page.</p>
+    <p>This page is designed in XHTML 1.0 Transitional, but the additional markup would also apply to HTML 4.x.  Also, additional issues must be considered when using ARIA landmarks in HTML 5. These issues will be covered in a different demonstration site at a later date.</p>
+    <p>Here are the notes and pertinent code changes for each section of this page for implementing ARIA landmarks. You can also view the source code to see these changes.</p>
+    <h3><a name="banner" id="banner"></a>Banner (banner)</h3>
+    <ol>
+      <li>The ARIA role &quot;banner&quot; is used to indicate mostly site-oriented content rather than page specific content.<a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#banner"> Read the ARIA specification for the &quot;banner&quot; role</a>. </li>
+      <li>Add the attribute role=&quot;banner&quot; to the encompassing &lt;div&gt;.</li>
+      <li>Add the attribute aria-labelledby=&quot;bannerHeading&quot; to the encompassing &lt;div&gt; to explicitly say what the heading is for this section.</li>
+    </ol>
+    <h3><a name="navigation" id="navigation"></a>Site Navigation (navigation)</h3>
+    <ol>
+      <li>The ARIA role &quot;navigation&quot; is used to indicate a collection of links to navigate the document or related documents.<a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#navigation"> Read the ARIA specification for the &quot;navigation&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;navigation&quot; to the encompassing &lt;div&gt;.</li>
+      <li>Add the attribute aria-label=&quot;Site Navigation&quot; to add a descriptive label to this section.</li>
+    </ol>
+    <h3><a name="search" id="search"></a>Search This Site (search)</h3>
+    <ol>
+      <li>The ARIA role &quot;search&quot; is used to define a region where search functionality is located. The role &quot;search&quot; is a specialized version of &quot;form&quot; so you do not need to label this section with the role of &quot;form.&quot; <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#search">Read the ARIA specification for the &quot;search&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;search&quot; to the encompassing &lt;div&gt;.</li>
+      <li>Add the attribute aria-labelledby=&quot;searchLabel&quot; to the encompassing &lt;div&gt; to explicitly say what the heading is for this section.</li>
+      <li>In this situation, since the form has only one input element, an alternative implementation for indicating the heading is to set aria-labelledby=&quot;searchTermLabel&quot; and not including the heading of &quot;Search This Site&quot; on the page at all.</li>
+    </ol>
+    <h3><a name="main" id="main"></a>Main Content (main)</h3>
+    <ol>
+      <li>The ARIA role &quot;main&quot; is used to indicate the content that relates directly to the central topic of the document. <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#main">Read the ARIA specification for the &quot;main&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;main&quot; to the encompassing &lt;div&gt;.</li>
+      <li>Add the attribute aria-labelledby=&quot;mainContentLabel&quot; to the encompassing &lt;div&gt; to explicitly say what the heading is for this section.</li>
+      <li>You should use the role &quot;main&quot; only once per page.</li>
+      <li>If you include the role=&quot;main&quot; on an element in a page, you do not have to provide a &quot;skip to main content&quot; link, as assistive technologies will be able to easily jump to this portion of the page. For compatibility with older assistive technologies and for users who do not know how to utilize landmarks you should still provide a &quot;skip to main content&quot; link.</li>
+    </ol>
+    <h3><a name="subscribe" id="subscribe"></a>Subscribe to Our Newsletter (form)</h3>
+    <ol>
+      <li>The ARIA role &quot;form&quot; is used to indicate a section that contains a form. <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#form">Read the ARIA specification for the &quot;form&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;form&quot; to the encompassing &lt;div&gt;. </li>
+      <li>Add the attribute aria-labelledby=&quot;newsletterLabel&quot; to the encompassing &lt;div&gt; to explicitly say what the heading is for this section.</li>
+      <li>Using the role=&quot;form&quot; still requires you to use the &lt;form&gt; tag and accompanying &lt;label&gt; and &lt;input&gt; tags.</li>
+    </ol>
+    <h3><a name="validation" id="validation"></a>ARIA and Validation (complementary)</h3>
+    <ol>
+      <li>The ARIA role &quot;complementary&quot; is used to indicate content that is complementary to the main content, yet has meaning when separated from the main content. <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#complementary">Read the ARIA specification for the &quot;complementary&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;complementary&quot; to the encompassing &lt;div&gt;. </li>
+      <li>Add the attribute aria-labelledby=&quot;validationLabel&quot; to the encompassing &lt;div&gt; to explicitly say what the heading is for this section.</li>
+    </ol>
+    <h3><a name="pageFooter" id="pageFooter"></a>Footer (contentinfo)</h3>
+    <ol>
+      <li>The ARIA role &quot;contentinfo&quot; indicates a region that contains information about the parent document. It often contains information like copyright and privacy statements. <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/roles#contentinfo">Read the ARIA specification about the &quot;contentinfo&quot; role</a>.</li>
+      <li>Add the attribute role=&quot;contentinfo&quot; to the encompassing &lt;div&gt;. </li>
+      <li>You should use the role &quot;contentinfo&quot; only once per page.</li>
+      <li>It is permissible to not include an aria-labelledby attribute (for this role or for any other role) if there is no visual label for a region and you have used one of the standard ARIA roles to identify the role of the region.</li>
+    </ol>
+  </div>
+  <br class="clearfloat" />
+  <div id="footer" role="contentinfo">
+    <p>&copy; NC State University, 2011</p>
+    <p><a href="#">Legal</a></p>
+    <p><a href="#">Privacy Policy</a></p>
+  </div>
+</div>
+</body>
+</html>

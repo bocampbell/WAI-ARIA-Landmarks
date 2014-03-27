@@ -1,0 +1,77 @@
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #000000;
+}
+
+.thrColElsHdr #container { 
+	width: 80%;
+	background: #FFFFFF;
+	margin: 0 auto;
+	border: 1px solid #000000;
+	text-align: left;
+} 
+.thrColElsHdr #header { 
+	background: #DDDDDD; 
+	padding: 0 10px;  
+} 
+.thrColElsHdr #header h1 {
+	margin: 0;
+	padding: 10px 0;
+}
+
+.thrColElsHdr #sidebar1 {
+	float: left; 
+	width: 20%;
+	background: #EBEBEB;
+	padding: 15px 0;
+}
+.thrColElsHdr #sidebar2 {
+	float: right; 
+	width: 20%;
+	background: #EBEBEB;
+	padding: 15px 0;
+}
+.thrColElsHdr #sidebar1 h3, .thrColElsHdr #sidebar1 p, .thrColElsHdr #sidebar2 p, .thrColElsHdr #sidebar2 h3 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.thrColElsHdr #mainContent {
+ 	margin: 0 22% 0 22%;
+} 
+.thrColElsHdr #footer { 
+	padding: 0 10px;
+	background:#DDDDDD;
+	text-align:center;
+} 
+.thrColElsHdr #footer p {
+	margin: 5px 10px;
+	padding: 10px 0;
+	display:inline;
+}
+
+.fltrt {
+	float: right;
+	margin-left: 8px;
+}
+.fltlft {
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat {
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+<!--[if IE]>
+/* place css fixes for all versions of IE in this conditional comment */
+.thrColElsHdr #sidebar1, .thrColElsHdr #sidebar2 { padding-top: 30px; }
+.thrColElsHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+<![endif]-->
